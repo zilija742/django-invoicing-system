@@ -1,8 +1,8 @@
     <div class="sidebar" data-color="purple" data-background-color="white" data-image="/static/assets/img/sidebar-1.jpg">
       <div class="logo">
         <a target="_blank" rel="noopener noreferrer" 
-           href="https://appseed.us/admin-dashboards/django-dashboard-material" class="simple-text logo-normal">
-          Django Material
+           href="/" class="simple-text logo-normal">
+           ALLIN ERP SOFTWARE S.A.C.
         </a>
       </div>
       <div class="sidebar-wrapper">
@@ -11,11 +11,67 @@
 
           <li class="nav-item {% if 'index' in segment %} active {% endif %}">
             <a class="nav-link" href="/">
-              <i class="material-icons">dashboard</i>
+              <!-- <i class="material-icons">dashboard</i> -->
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item {% if 'page-user' in segment %} active {% endif %}">
+
+          <li class="nav-item {% if 'ticket' in segment %} active {% endif %}">
+            <a class="nav-link" href="/ticket">
+              <p>Tickets</p>
+            </a>
+          </li>
+          <li class="nav-item {% if 'monitoreo' in segment %} active {% endif %}">
+            <a class="nav-link" href="/monitoreo">
+              <p>Monitoreo</p>
+            </a>
+          </li>
+          <li class="nav-item {% if 'punto-de-venta' in segment %} active {% endif %}">
+            <a class="nav-link" href="/punto-de-venta">
+              <p>Punto de Venta</p>
+            </a>
+          </li>
+          <li class="nav-item {% if 'comprobantes' in segment %} active {% endif %}">
+            <a class="nav-link" href="/comprobantes">
+              <p>Comprobantes</p>
+            </a>
+          </li>
+          <li class="nav-item {% if 'guias' in segment %} active {% endif %}">
+            <a class="nav-link" href="/guias">
+              <p>Guias</p>
+            </a>
+          </li>
+          <li class="nav-item {% if 'catalogo' in segment %} active {% endif %}">
+            <a class="nav-link" href="/catalogo">
+              <p>Catalogo</p>
+            </a>
+          </li>
+          <li class="nav-item {% if 'entidades' in segment %} active {% endif %}">
+            <a class="nav-link" href="/entidades">
+              <p>Entidades</p>
+            </a>
+          </li>
+          <li class="nav-item {% if 'compras' in segment %} active {% endif %}">
+            <a class="nav-link" href="/compras">
+              <p>Compras</p>
+            </a>
+          </li>
+          <li class="nav-item {% if 'especial' in segment %} active {% endif %}">
+            <a class="nav-link" href="/especial">
+              <p>Especial</p>
+            </a>
+          </li>
+          <li class="nav-item {% if 'anulaciones' in segment %} active {% endif %}">
+            <a class="nav-link" href="/anulaciones">
+              <p>Anulaciones</p>
+            </a>
+          </li>
+          <li class="nav-item {% if 'configuracion' in segment %} active {% endif %}">
+            <a class="nav-link" href="/configuracion">
+              <p>Configuracion</p>
+            </a>
+          </li>
+          <!-- <li class="nav-item {% if 'page-user' in segment %} active {% endif %}">
             <a class="nav-link" href="/page-user.html">
               <i class="material-icons">person</i>
               <p>User Profile</p>
@@ -73,18 +129,18 @@
               <i class="material-icons">unarchive</i>
               <p>PRO Version</p>
             </a>
-          </li>
+          </li> -->
 
         {% else %}
 
-          <li class="nav-item active">
+          <!-- <li class="nav-item active">
             <a class="nav-link" 
                target="_blank" rel="noopener noreferrer"  
                href="https://appseed.us/admin-dashboards/django-dashboard-material-pro">
               <i class="material-icons">unarchive</i>
               <p>PRO Version</p>
             </a>
-          </li>          
+          </li>           -->
 
         {% endif %}
         </ul>

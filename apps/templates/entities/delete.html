@@ -1,0 +1,31 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Clientes y Proveedores {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+          <div class="card-header card-header-primary">
+            <h4 class="card-title ">Confirmar</h4>
+          </div>
+          <div class="card-body">
+            <form method="POST">
+                <!-- Security token by Django -->
+                {% csrf_token %}
+                Esta acción no se puede deshacer.<br>
+                <input class="btn btn-success" type="submit" value="Confirmar" />
+                <a href="/entities" class="btn btn-danger">Cancelar</a>
+            </form>
+          </div>
+        </div>
+</div>
+
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

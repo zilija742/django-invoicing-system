@@ -84,3 +84,17 @@ def update_entities(request, id):
  
     html_template = loader.get_template('entities/update.html')
     return HttpResponse(html_template.render(context, request))
+
+@login_required(login_url="/login/")
+def delete_entities(request, id):
+    context ={'segment': 'entities'}
+ 
+    obj = get_object_or_404(EntitiesModel, id = id)
+ 
+ 
+    if request.method =="POST":
+        obj.delete()
+        return HttpResponseRedirect("/entities")
+ 
+    html_template = loader.get_template('entities/delete.html')
+    return HttpResponse(html_template.render(context, request))

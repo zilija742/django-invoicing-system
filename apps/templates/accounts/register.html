@@ -65,6 +65,30 @@
               <div class="row">
                 <div class="col-md-12">
                   <div class="form-group">
+                    <label class="bmd-label-floating">Phone Number</label>
+                    {{ form.phone_number }}
+                  </div>
+                </div>
+              </div>
+              <span class="text-danger">{{ form.phone_number.errors }}</span>
+
+              <br />
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">RUC</label>
+                    {{ form.ruc }}
+                  </div>
+                </div>
+              </div>
+              <span class="text-danger">{{ form.ruc.errors }}</span>
+
+              <br />
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
                     <label class="bmd-label-floating">Password</label>
                     {{ form.password1 }}
                   </div>

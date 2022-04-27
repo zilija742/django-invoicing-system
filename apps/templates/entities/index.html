@@ -1,0 +1,88 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Clientes y Proveedores {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-4">
+        <a href="{% url 'entities.create' %}"><button class="btn btn-primary"><i class="fa fa-plus"></i>  Agregar nueva</button></a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-primary">
+            <h4 class="card-title ">Clientes y Proveedores</h4>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                  <thead class=" text-primary">
+                    <th>
+                        TIPO
+                    </th>
+                    <th>
+                        NÚMERO
+                    </th>
+                    <th>
+                        DENOMINACIÓN / NOMBRES
+                    </th>
+                    <th>
+                        DIRECCIÓN FISCAL
+                    </th>
+                    <th>
+                        EMAILS
+                    </th>
+                    <th>
+                        TELÉFONOS
+                    </th>
+                    <th>
+                        COMPROBANTES <br>(CPE'S) EMITIDOS
+                    </th>
+                    <th></th>
+                  </thead>
+                  <tbody>
+                    {% for data in dataset %}
+                    <tr>
+                        <td>
+                            {{data.type}}
+                        </td>
+                        <td>
+                            {{data.number}}
+                        </td>
+                        <td>
+                            {{data.full_name}}
+                        </td>
+                        <td>
+                            {{data.address}}
+                        </td>
+                        <td>
+                            {{data.primary_email}}
+                        </td>
+                        <td>
+                            {{data.mobile_number}}
+                        </td>
+                        <td>
+                            VER CPE'S
+                        </td>
+                        <td>
+                            <a href="{% url 'entities.update' data.id %}"><button class="btn btn-info btn-sm">Editar</button></a>
+                            <button class="btn btn-error btn-sm">Borrar</button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+          </div>
+        </div>
+</div>
+
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

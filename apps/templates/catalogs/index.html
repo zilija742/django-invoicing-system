@@ -7,9 +7,12 @@
 
 {% block content %}
 <div class="row">
-    <div class="col-md-4">
-        <a href="{% url 'entities.create' %}"><button class="btn btn-primary"><i class="fa fa-plus"></i>  Agregar nueva</button></a>
+    <div class="col-md-3">
+        <a href="{% url 'catalogs.create' %}"><button class="btn btn-primary w-100"><i class="fa fa-plus"></i>  Agregar nueva</button></a>
     </div>
+    <div class="col-md-3">
+        <a href="{% url 'categories.index' %}"><button class="btn btn-primary w-100"><i class="fa fa-th-list"></i>  Mostrar todo Categorías</button></a>
+      </div>
 </div>
 <div class="row">
     <div class="col-md-12">

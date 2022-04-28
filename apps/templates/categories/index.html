@@ -1,0 +1,58 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Categorías {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-4">
+        <a href="{% url 'categories.create' %}"><button class="btn btn-primary"><i class="fa fa-plus"></i>  Nueva Categoría</button></a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-primary">
+            <h4 class="card-title ">Categorías</h4>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                  <thead class=" text-primary">
+                    <th>
+                        CÓDIGO
+                    </th>
+                    <th>
+                        DESCRIPCIÓN
+                    </th>
+                    <th></th>
+                  </thead>
+                  <tbody>
+                    {% for data in dataset %}
+                    <tr>
+                        <td>
+                            {{data.category_code}}
+                        </td>
+                        <td>
+                            {{data.category_description}}
+                        </td>
+                        <td>
+                            <a href="{% url 'categories.update' data.id %}"><button class="btn btn-info btn-sm">Editar</button></a>
+                            <a href="{% url 'categories.delete' data.id %}"><button class="btn btn-danger btn-sm">Borrar</button></a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+          </div>
+        </div>
+</div>
+
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

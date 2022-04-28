@@ -8,4 +8,9 @@ urlpatterns = [
     path('categories/create', views.create_categories, name='categories.create'),
     path('categories/<int:id>/update', views.update_categories, name='categories.update'),
     path('categories/<int:id>/delete', views.delete_categories, name='categories.delete'),
+
+    path('catalogs', views.index_catalogs, name='catalogs.create'),
+    path('catalogs/create', views.create_catalogs, name='catalogs.create'),
+    path('catalogs/<int:id>/update', views.update_catalogs, name='catalogs.update'),
+    path('catalogs/<int:id>/delete', views.delete_catalogs, name='catalogs.delete'),
 ]

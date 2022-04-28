@@ -1,0 +1,106 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Catálogo {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-4">
+        <a href="{% url 'entities.create' %}"><button class="btn btn-primary"><i class="fa fa-plus"></i>  Agregar nueva</button></a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-primary">
+            <h4 class="card-title ">Catálogo</h4>
+            <p class="card-category"> Productos o Servicios</p>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                  <thead class=" text-primary">
+                    <th>
+                        CÓDIGO
+                    </th>
+                    <th>
+                        DESCRIPCIÓN
+                    </th>
+                    <th>
+                        UNIDAD DE MEDIDA
+                    </th>
+                    <th>
+                        M
+                    </th>
+                    <th>
+                        VENTA VALOR UNITARIO (SIN IGV)
+                    </th>
+                    <th>
+                        VENTA PRECIO UNITARIO (CON IGV)
+                    </th>
+                    <th>
+                        COMPRA VALOR UNITARIO (SIN IGV)
+                    </th>
+                    <th>COMPRA PRECIO UNITARIO (CON IGV)</th>
+                    <th>DESTACADO</th>
+                    <th>TIPO DE AFECTACIÓN (IGV)</th>
+                    <th>CÓDIGO DE CATEGORÍA</th>
+                    <th>DESCRIPCIÓN DE CATEGORÍA</th>
+                    <th>CÓDIGO PRODUCTO SUNAT</th>
+                    <th>STOCK</th>
+                    <th></th>
+                  </thead>
+                  <tbody>
+                    {% for data in dataset %}
+                    <tr>
+                        <td>
+                            {{data.code}}
+                        </td>
+                        <td>
+                            {{data.name}}
+                        </td>
+                        <td>
+                            {{data.type}}
+                        </td>
+                        <td>
+                            {{data.currency}}
+                        </td>
+                        <td>
+                            {{data.sale_without_igv|default:""}}
+                        </td>
+                        <td>
+                            {{data.sale_with_igv|default:""}}
+                        </td>
+                        <td>
+                            {{data.purchase_without_igv|default:""}}
+                        </td>
+                        <td>
+                            {{data.purchase_with_igv|default:""}}
+                        </td>
+                        <td>
+                        </td>
+                        <td>{{data.affectation_type|default:""}}</td>
+                        <td>{{data.category_id}}</td>
+                        <td>{{data.category_id}}</td>
+                        <td>{{data.sunat_code|default:"-"}}</td>
+                        <td>0.00</td>
+                        <td>
+                            <a href="{% url 'catalogs.update' data.id %}"><button class="btn btn-info btn-sm">Editar</button></a>
+                            <a href="{% url 'catalogs.delete' data.id %}"><button class="btn btn-danger btn-sm">Borrar</button></a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+          </div>
+        </div>
+</div>
+
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

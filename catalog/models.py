@@ -10,7 +10,10 @@ class CategoriesModel(models.Model):
         return self.category_code
 
 class CatalogsModel(models.Model):
-    category_id = models.CharField(max_length=30)
+    category = models.ForeignKey(
+        'CategoriesModel',
+        on_delete=models.CASCADE,
+    )
     type = models.IntegerField(null=False)
     code = models.CharField(max_length=30)
     name = models.CharField(max_length=100)

@@ -35,7 +35,7 @@ class CatalogsForm(forms.ModelForm):
         user = kwargs.pop('user')
         super(CatalogsForm, self).__init__(*args, **kwargs)
         
-        self.fields['category_id'] = forms.ModelChoiceField(
+        self.fields['category'] = forms.ModelChoiceField(
             queryset=CategoriesModel.objects.filter(user_id=user.id),
             widget=forms.Select(
                 attrs={

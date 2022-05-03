@@ -169,3 +169,4 @@ class CatalogsForm(forms.ModelForm):
         model = CatalogsModel
         fields = "__all__"
         exclude = ['user_id']
+        #ok
